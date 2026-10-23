@@ -1,74 +1,74 @@
 # Budget Analysis and Monthly Expense Forecasting
 
-## Overview
+A Python and machine-learning project exploring transaction data, spending patterns, and next-month expense forecasting.
 
-This project explores personal finance transaction data to understand spending patterns and experiment with monthly expense forecasting using Python and machine learning.
+## Project Overview
 
-The project combines exploratory data analysis (EDA), data preprocessing, feature engineering, and model evaluation to investigate whether historical spending patterns can help predict future expenses.
+The notebook covers data inspection, cleaning, exploratory analysis, feature engineering, a Random Forest regression experiment, and visualizations of monthly expenses and income.
 
-## Objectives
+## Tools Used
 
-- Analyze monthly income and expense patterns.
-- Identify spending trends across categories and payment methods.
-- Clean and preprocess transaction data.
-- Engineer time-series features for monthly expense forecasting.
-- Compare machine learning models against simple forecasting baselines.
+- Python
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- Scikit-learn
+- Jupyter Notebook / JupyterLab
 
-## Technologies Used
+## Workflow
 
-- **Language:** Python
-- **Data Analysis:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Machine Learning:** Scikit-learn
-- **Environment:** Jupyter Notebook
-
-## Project Workflow
-
-1. **Data Cleaning:** Processed transaction dates, converted amount fields to numeric values, and prepared the data for analysis.
-2. **Exploratory Data Analysis:** Investigated spending trends and monthly patterns using statistical summaries and visualizations.
-3. **Feature Engineering:** Created lag features, rolling means, rolling standard deviations, calendar features, and cyclical month encodings.
-4. **Model Development:** Experimented with Random Forest, Extra Trees, and Gradient Boosting models.
-5. **Model Evaluation:** Compared predictions using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R-squared, alongside simple forecasting baselines.
-
-## Getting Started
-
-### Prerequisites
-
-Install Python and Jupyter Notebook or JupyterLab.
-
-Install the required libraries:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-```
-
-### Run the Project
-
-1. Clone or download this repository.
-2. Place the required dataset in the location expected by the notebook.
-3. Open `budget_analysis.ipynb` in Jupyter Notebook or JupyterLab.
-4. Run the cells sequentially.
+1. **Inspect the data:** review dataset dimensions, data types, missing values, and summary statistics.
+2. **Clean the data:** normalize transaction types, payment modes, locations, and categories; convert dates and amounts; handle invalid or missing values; and remove duplicate rows.
+3. **Explore spending:** inspect transaction patterns and create category, payment-mode, and monthly income-versus-expense visualizations.
+4. **Prepare forecasting features:** aggregate expenses by month and create lag features, rolling statistics, and calendar features.
+5. **Train and evaluate:** fit a Random Forest regressor using a chronological train/test split and evaluate its predictions with MAE, RMSE, and R².
 
 ## Dataset
 
-The notebook expects a CSV file named `budgetwise_finance_dataset.csv`.
+The notebook expects a CSV file named `budgetwise_finance_dataset.csv` in the notebook's working directory.
 
-The dataset is not included in this repository. Make sure you have a legitimate copy of the dataset before running the notebook, and verify its source and redistribution permissions before publishing it.
+The dataset is **not included** in this repository. Obtain a legitimate copy from the dataset's original source, check its licence and redistribution terms, and place it beside the notebook before running it. The source has not been verified or documented here, so this README does not attribute the data to a particular provider.
 
-## Limitations
+## Getting Started
 
-This project is an exploratory forecasting experiment, not a production-ready financial forecasting system. Model performance must be evaluated against appropriate baselines, and the notebook should be rerun from a clean environment to verify reproducibility.
+Use Python 3 and create a virtual environment if desired.
 
-## Future Improvements
+Install dependencies:
 
-- Improve data validation and outlier handling.
-- Compare models using chronological backtesting.
-- Investigate forecasting errors and feature importance.
-- Develop a simple interactive interface for exploring spending patterns.
-- Improve reproducibility and document verified model results.
+```bash
+pip install -r requirements.txt
+```
+
+Clone the repository and open the notebook:
+
+```bash
+git clone https://github.com/AkshatRajput16/Budget-Analysis-Forecasting.git
+cd Budget-Analysis-Forecasting
+jupyter notebook budget_analysis.ipynb
+```
+
+Make sure the CSV file is in the current working directory, then run the notebook cells in order. The saved notebook outputs are included, but results have not been independently reproduced in a fresh environment because the dataset is not included here.
+
+## Saved Forecasting Result
+
+The notebook's saved Random Forest run reports:
+
+| Metric | Saved result |
+|---|---:|
+| Mean Absolute Error (MAE) | 72,424.82 |
+| Root Mean Squared Error (RMSE) | 89,003.57 |
+| R² | -0.3812 |
+
+These values are the saved results from the notebook, not a newly rerun evaluation. The negative R² indicates that this model performed worse than a test-set mean-prediction benchmark on the recorded test sample. The test split contains only nine observations, so the result is limited and should not be treated as evidence of reliable forecasting performance.
+
+## Limitations and Next Steps
+
+- The dataset is not included, and its original source/licence needs to be documented.
+- Re-run the notebook from a clean environment to confirm reproducibility.
+- Compare the model with simple baselines and use chronological backtesting over multiple periods.
+- Review feature timing and forecast errors before drawing conclusions.
+- Add a concise findings section after verifying the analysis and results.
 
 ## Author
 
-**Akshat Rajput**
-
+**Akshat Rajput**  
 GitHub: [AkshatRajput16](https://github.com/AkshatRajput16)
