@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+
+# Local datasets (do not publish without checking permission)
+*.csv
+*.xlsx
+*.parquet
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
